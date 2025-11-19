@@ -1,16 +1,19 @@
 import './App.css'
+import Home from './pages/Home'
+
 
 function App() {
+  
   return (
    <div>
-     <p>Hello World</p>
-     <Text string="Hello" />
-     <Text string="World"/>
+    <Home />
    </div>
    
   )
 }
 
+
+/*
 function Text({string}) {
   return (
     <div>
@@ -28,6 +31,6 @@ function Component() {
       <div></div>
     </>
   )
-}
+}*/
 
 export default App
