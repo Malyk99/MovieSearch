@@ -7,7 +7,7 @@ function Home() {
     const [searchQuery, setSearchQuery] = useState("");
     const [movies, setMovies] = useState([]);
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const loadPopularMovies = async () => {
@@ -37,7 +37,7 @@ function Home() {
                 <input 
                     type="text"
                     placeholder="Search movies..." 
-                    classNaem="search-input"
+                    className="search-input"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}    
                 />
@@ -56,6 +56,11 @@ function Home() {
                 ))}
             </div>
             )}
+            <div className="movies-grid">
+                {movies.map((movie) => (
+                    <MovieCard movie={movie} key={movie.id} />
+                ))}
+            </div>
         </div>
     )
 }
